@@ -1,0 +1,53 @@
+
+<div class="container-fluid">
+    <div>
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <lottie-player id="success-animation" class="align-items-center" src="/images/green-tick.json"  background="transparent"  speed="1.2"  style="width: 150px; height: 150px;" autoplay></lottie-player>
+        {{!-- src="https://assets5.lottiefiles.com/packages/lf20_liuaqrbl.json" --}}
+    </div>
+    <div class="container text-center">
+        <h1 class="mt-5">Thank you.</h1>
+        <p class="lead w-lg-50 mx-auto">Your order has been placed successfully.</p>
+        <p class="w-lg-50 mx-auto">Your order number is <a href="/order-history">{{OrderId}}</a>. We will immediatelly process your and it will be delivered in 2 - 5 business days.</p>
+        <br>
+        <br>
+        <a href="/order-history">Click here to view your order history.</a>
+    </div>
+    
+</div>
+
+
+<style type="text/css">
+body {
+    margin: 0%;
+}
+.text-center {
+    text-align: center !important;
+}
+.mb-5 {
+    margin-bottom: 3rem !important;
+}
+.mx-auto {
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+.text-reset {
+    --bs-text-opacity: 1;
+    color: inherit !important;
+}
+a {
+    color: #5465ff;
+    text-decoration: none;
+}
+body {
+    background: #eee;
+}
+
+    lottie-player {
+    --lottie-player-seeker-track-color: #e48509;
+    --lottie-player-seeker-thumb-color: #ffcc00;
+    margin: 0 auto;
+    height: 10px;
+    }
+
+</style>

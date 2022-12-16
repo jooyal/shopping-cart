@@ -1,0 +1,44 @@
+<section>
+    <div class="container col-md-6 align-items-center justify-contents-center">
+        
+        <form action="/admin/edit-products/{{productData._id}}" method="post" enctype="multipart/form-data">
+            <div>
+                <h1 class="text-center">Add Product</h1>
+            <div class="mb-3">
+                <label for="productName" class="form-label">Product Name</label>
+
+                <input type="text" name="productName" class="form-control" id="productName" value="{{productData.productName}}" >
+            </div>
+            <div class="mb-3">
+                <label for="productCategory" class="form-label">Product Category</label>
+                <input type="text" name="productCategory" class="form-control" id="productCategory" value="{{productData.productCategory}}">
+            </div>
+            <div class="mb-3">
+                <label for="productPrice" class="form-label">Price</label>
+                <input type="number" name="productPrice" class="form-control" id="productPrice" value="{{productData.productPrice}}">
+            </div>
+            <div class="mb-3">
+                <label for="productDescription" class="form-label">Product Description</label>
+                <input type="text" name="productDescription" class="form-control" id="productDescription" value="{{productData.productDescription}}">
+            </div>
+            <div class="mb-3">
+                <label for="productImage" class="form-label me-5">Current Image</label>
+                <label for="" class="form-label ms-5"> New Image</label></br>
+                <img src="/product-images/{{productData._id}}.jpg" alt="" style="height: 150px;width:150px;">
+                <img src="" id="imageView" alt="" style="height: 150px; width:150px; margin-top: -4%;" class="ms-5"> </br>
+                <label for="productImage" class="form-label">Choose New Image</label>
+                <input type="file" name="productImage" class="form-control"  onchange="viewImage(event)" id="productImage">
+            </div>
+            </div>
+            
+            <button type="submit" name="submit" class="btn btn-success">Submit</button>
+        </form>
+        
+    </div>
+</section>
+
+<script>
+    let viewImage = (event)=>{
+        document.getElementById("imageView").src = URL.createObjectURL(event.target.files[0])
+    }
+</script>

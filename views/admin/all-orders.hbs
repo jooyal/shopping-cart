@@ -1,0 +1,40 @@
+<section>
+    <div class="float-end me-5 mt-3 mb-5" >
+        <a class="btn bg-success" href="/admin/add-products">Add Product</a>
+    </div>
+    <div class="container">
+        <table class="table" id="myTable" >
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Order Id</th>
+      <th scope="col">User Id</th>
+      <th scope="col">Payment Method</th>
+      <th scope="col">Total Amount</th>
+      <th scope="col">Status</th>
+      <th scope="col">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each orders}}
+    <tr>
+      <th scope="row">{{inc @index}}</th>
+      <td>{{this._id}}</td>
+      <td>{{this.userId}}</td>
+      <td>{{this.paymentMethod}}</td>
+      <td>{{this.totalAmount}}</td>
+      <td>{{this.status}}</td>
+      <td>{{this.date}}</td>
+    </tr>
+    {{/each}}
+    
+  </tbody>
+</table>
+    </div>
+</section>
+
+<script>
+  $(document).ready( function () {
+    $('#myTable').DataTable();
+  } );
+</script>
