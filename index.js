@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+require('dotenv').config();
 
 var userRouter = require('./routes/user');
 var adminRouter = require('./routes/admin');
@@ -59,6 +60,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-
+app.listen(process.env.PORT || '3000',()=>{
+  console.log('connected to port 3000');
+})
 
 module.exports = app;
