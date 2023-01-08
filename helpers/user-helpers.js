@@ -1,9 +1,9 @@
+require('dotenv').config();
 const db = require('../config/connection.js');
 const collection = require('../config/collections.js');
 const bcrypt = require('bcryptjs');
 const { ObjectId } = require('mongodb');
 const Razorpay = require('razorpay');
-require('dotenv').config();
 const crypto = require('crypto');
 
 let instance = new Razorpay({
