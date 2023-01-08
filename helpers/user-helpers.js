@@ -7,10 +7,8 @@ const Razorpay = require('razorpay');
 const crypto = require('crypto');
 
 let instance = new Razorpay({
-    // key_id: process.env.RAZORPAY_KEY_ID,
-    // key_secret: process.env.RAZORPAY_KEY_SECRET,
-    key_id:'rzp_test_hoA57QfXOzGC2S' ,
-    key_secret: 'B8AfQXZqCweZRWCpzpSS8rdB'
+    key_id: process.env.RAZORPAY_KEY_ID,
+    key_secret: process.env.RAZORPAY_KEY_SECRET
   })
 
 module.exports = {
