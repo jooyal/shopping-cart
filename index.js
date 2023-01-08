@@ -4,7 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 require('dotenv').config();
-require('bcrypt/lib/binding/napi-v3/bcrypt_lib.node');
+// require('bcrypt/lib/binding/napi-v3/bcrypt_lib.node');
 
 var userRouter = require('./routes/user');
 var adminRouter = require('./routes/admin');

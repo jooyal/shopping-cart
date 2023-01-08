@@ -1,10 +1,10 @@
 const db = require('../config/connection.js');
 const collection = require('../config/collections.js');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const { ObjectId } = require('mongodb');
 const Razorpay = require('razorpay');
 require('dotenv').config();
-
+const crypto = require('crypto');
 
 let instance = new Razorpay({
     key_id: process.env.RAZORPAY_KEY_ID,
@@ -153,7 +153,7 @@ module.exports = {
                     },
                     {
                         $project:{
-                            '_id':0,
+                            '_id':0,//no need for id in output.
                             'totalQuantity' : {$sum:'$products.quantity'}
                         }
                     },
@@ -352,7 +352,6 @@ module.exports = {
     },
     verifyPayment : (details,RazorpayId)=>{
         return new Promise((resolve, reject)=>{
-            const crypto = require('crypto');
             let hmac = crypto.createHmac('sha256', process.env.RAZORPAY_KEY_SECRET); // adding the name of algorithm and the secret key for hashing
 
             hmac.update(RazorpayId+'|'+details['payment[razorpay_payment_id]']) //data to be hashed
